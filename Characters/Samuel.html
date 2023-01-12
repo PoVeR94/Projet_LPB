@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Royaume des SIO | Wiki</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link rel="icon" href="../Photos/monke_icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Zen+Dots&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Merriweather:wght@300&family=Zen+Dots&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+    body 
+    {
+        background-image: url("../Photos/Fond.png");
+        background-attachment: fixed;
+    }
+    </style>
+</head>
+    <audio autoplay loop>
+        <source src="../projet_LPB/Photos/jungle-japes-donkey-kong-64.mp3" type="audio/mpeg" >
+    </audio>
+<body>
+    <div class="topnav">
+        <div class=""></div> 
+        <a href="../index.html">Home</a>
+        <a class="active" href="../Characters.html">Characters</a>
+        <a href="../index.html"><H1>SIOpédia</H1></a>
+        <a href="../Lore.html">Lore</a>
+        <a href="../The Kingdom - Multivers.html">Multivers</a>
+    </div>
+
+    <div id="fond">
+        <div class="pop-up_window">
+            <div class="pop-up_header">
+                <h2 id="pop-up_title">
+                    Image de banquier
+                </h2>
+                <button id="close">
+                    <span class="material-symbols-outlined">
+                        close
+                    </span>
+                </button>
+                </div>
+            <img id="pop-up_image" src="../Photos/characters.png" alt="le banquier"/>
+        </div>
+    </div>
+
+    <div class="maintext">
+        <p class="titre">Samuel BERTHIER</p>
+        <i id="quote">
+            "We go Gym"
+        </i>
+
+        <div id="text_content">
+            <h3>
+                Description
+            </h3>
+            <p class="texte">
+                <a class="link_in_text"  href="Samuel.html">Samuel Berthier</a> (<i>24/08/2004-aujourd'hui</i>), plus connu sous le nom de <i>«Viva musculus»</i> est un élève de la classe de <a class="link_in_text" href="../Characters.html#SIO1">SIO 1</a>. Il est l’un des seuls mammifères de cette classe à privilégier son corps à la place de l’apprentissage.<br><br>
+                    Passionné par la salle de sport et les protéines, Samuel fera tout pour atteindre son <i>body goal</i> malgré les tentatives de cheat meal.<br><br>
+                    Accompagné de son <span class="click_pop-up">banquier</span>, il est le précurseur de la monnaie <span class="click_pop-up">SOM</span>, il fera tout ce qui est en son pouvoir pour la démocratiser.<br><br>
+                    A ne pas oublier, Samuel est un grand fervent des desserts de la cantine, il se laissera emporter facilement dans cette alimentation non recommandée pour son corps de rêve.
+            </p>
+            
+            <div class="notes">
+                <h3 id="stats">
+                    Statistiques générales
+                </h3>
+                <img src="../Photos/notes/stats_samuel.png"
+                    alt="stats_samuel"/>
+            </div>
+        </div>
+            
+        <aside>
+            <h2 id="name">
+                Samuel
+            </h2>
+            <img src="../Photos/eleves/samuel.jpg" alt="Samuel"/>
+            <section>
+                <h2 id="more_info">
+                    Informations supplémentaires
+                </h2>
+                <div class="information_container">
+                    <div class="inside_info">
+                        <h3>
+                            Nom Complet
+                        </h3>
+                        <p>
+                            Samuel Berthier
+                        </p>
+                    </div>
+
+                    <div class="inside_info">
+                        <h3>
+                            Alias
+                        </h3>
+                        <p>
+                            <i>
+                                Le Gym-bro~
+                            </i>
+                        </p>
+                    </div>
+
+                    <div class="inside_info">
+                        <h3>
+                            Date de naissance
+                        </h3>
+                        <p>
+                            24/08/2004
+                        </p>
+                    </div>
+
+                    <div class="inside_info">
+                        <h3>
+                            Nationalité
+                        </h3>
+                        <p>
+                            Française
+                            <img id="fr_flag" src="https://hatscripts.github.io/circle-flags/flags/fr.svg"
+                                alt="fr"
+                                width="25" 
+                                height="25"/>
+                        </p>
+                        
+                    </div>
+                </div>
+            </section>
+        </aside>
+    </div>
+
+    <script>
+        $("#fond").hide();
+        $(".click_pop-up").click((ev) => {
+            $("#pop-up_title").text(`Image de ${ev.target.outerText}`);
+            $("#pop-up_image").attr("src" , `../Photos/${ev.target.outerText}.png`);
+            $("#pop-up_image").attr("alt" , `le ${ev.target.outerText}`);
+            $("#fond").fadeIn();
+        })
+        $("#fond,#close").click(() => {
+            $("#fond").fadeOut();
+        })
+    </script>
+</body>
+</html>

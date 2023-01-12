@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Royaume des SIO | Wiki</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link rel="icon" href="../Photos/monke_icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Zen+Dots&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Merriweather:wght@300&family=Zen+Dots&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+    body 
+    {
+      background-image: url("../Photos/Fond.png");
+      background-attachment: fixed;
+    }
+    </style>
+</head>
+    <audio autoplay loop>
+        <source src="../projet_LPB/Photos/jungle-japes-donkey-kong-64.mp3" type="audio/mpeg" >
+    </audio>
+<body>
+    <div class="topnav">
+        <div class=""></div> 
+        <a href="../index.html">Home</a>
+        <a class="active" href="../Characters.html">Characters</a>
+        <a href="../index.html"><H1>SIOpédia</H1></a>
+        <a href="../Lore.html">Lore</a>
+        <a href="../The Kingdom - Multivers.html">Multivers</a>
+    </div>
+
+    <div id="fond">
+        <div class="pop-up_window">
+            <div class="pop-up_header">
+                <h2 id="pop-up_title">
+                    Image de banquier
+                </h2>
+                <button id="close">
+                    <span class="material-symbols-outlined">
+                        close
+                    </span>
+                </button>
+                </div>
+            <img id="pop-up_image" src="../Photos/characters.png" alt="le banquier"/>
+        </div>
+    </div>
+    
+    <div class="maintext">
+        <p class="titre">Alexandre BONIN</p>
+        <i id="quote">
+            "Salut, ça va?"
+        </i>
+        
+        <div id="text_content">
+            <h3>
+                Description
+            </h3>
+            <p class="texte">
+                <a class="link_in_text"  href="Alexandre.html">Alexandre Bonin</a> (<i>23/08/2004-aujourd'hui</i>).Souvent egalise a un <i>«Et X Mediocris»</i> est un animal qui a tout de suite su s’intéresser au jeu de la balle au pied, plus communément appelé football.<br><br>
+                Alexandre fais également parti des précurseurs du <span class="click_pop-up">SOM</span> accompagné du <span class="click_pop-up">banquier</span>, il saura mettre au gout du jour cette nouvelle money qui fait déjà ses preuves au sein des SIO.<br><br>
+                Inventeur de la <span class="click_pop-up">crêpe</span> a la sauce du chef, il a su donner envie a plusieurs personnes de manger son plat… A ? on me dit dans l’oreillette que sa crêpe a fait faillite… mince, en même temps quelle idée de commercialiser un truc comme ce pendant le NNN.
+            </p>
+            
+            <div class="notes">
+                <h3 id="stats">
+                    Statistiques générales
+                </h3>
+                <img src="../Photos/notes/stats_inconnues.png"
+                    alt="stats_inconnues"/><br>
+                <p class="texte">
+                    <i>
+                        Les statistiques de cet élève sont inconnues à ce jour
+                    </i>
+                </p>
+            </div>
+        </div>
+
+        <aside>
+            <h2 id="name">
+                Alexandre
+            </h2>
+            <img src="../Photos/eleves/alexandre.jpg" alt="Alexandre"/>
+            <section>
+                <h2 id="more_info">
+                    Informations supplémentaires
+                </h2>
+                <div class="information_container">
+                    <div class="inside_info">
+                        <h3>
+                            Nom Complet
+                        </h3>
+                        <p>
+                            Alexandre Bonin
+                        </p>
+                    </div>
+
+                    <div class="inside_info">
+                        <h3>
+                            Alias
+                        </h3>
+                        <p>
+                            <i>
+                                Le Footix
+                            </i>
+                        </p>
+                    </div>
+
+                    <div class="inside_info">
+                        <h3>
+                            Date de naissance
+                        </h3>
+                        <p>
+                            23/08/2004
+                        </p>
+                    </div>
+
+                    <div class="inside_info">
+                        <h3>
+                            Nationalité
+                        </h3>
+                        <p>
+                            Française
+                            <img id="fr_flag" src="https://hatscripts.github.io/circle-flags/flags/fr.svg"
+                                alt="fr"
+                                width="25" 
+                                height="25"/>
+                        </p>
+                        
+                    </div>
+                </div>
+            </section>
+        </aside>
+    </div>
+    
+    <script>
+        $("#fond").hide();
+        $(".click_pop-up").click((ev) => {
+            $("#pop-up_title").text(`Image de ${ev.target.outerText}`);
+            $("#pop-up_image").attr("src" , `../Photos/${ev.target.outerText}.png`);
+            $("#pop-up_image").attr("alt" , `le ${ev.target.outerText}`);
+            $("#fond").fadeIn();
+        })
+        $("#fond,#close").click(() => {
+            $("#fond").fadeOut();
+        })
+    </script>
+
+</body>
+</html>

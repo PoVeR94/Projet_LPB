@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Royaume des SIO | Wiki</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link rel="icon" href="Photos/monke_icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Zen+Dots&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Merriweather:wght@300&family=Zen+Dots&display=swap" rel="stylesheet">
+    <style>
+        body 
+        {
+            background-image: url("../projet_LPB/Photos/muchhigh.jpg");
+            background-size: cover;
+        }
+    </style>
+</head>
+    <audio autoplay loop>
+        <source src="../projet_LPB/Photos/gotye-somebody-that-i-used-to-know-feat-kimbra-official-music-video.mp3">
+    </audio>
+<body>
+    <div class="topnav">
+        <div class=""></div> 
+        <a href="index.html">Home</a>
+        <a href="Characters.html">Characters</a>
+        <a href="index.html"><H1>SIOpédia</H1></a>
+        <a href="Lore.html">Lore</a>
+        <a class="active" href="The Kingdom - Multivers.html">Multivers</a>
+      </div>
+
+      <div id="fond_travaux">
+        <div class="pop-up_window">
+            <div class="pop-up_header">
+                <h2 id="pop-up_title">
+                    Site indisponible
+                </h2>
+                <p class="texte_travaux">
+                    Ce site est actuellement en construction et donc inaccessible pour l'instant.<br>
+                    Veuilez nous excuser pour la gène occasionnée.
+                </p>
+            </div>
+            <img id="pop-up_image" src="Photos/chantier.jpg" alt="chantier"/>
+        </div>
+    </div>
+
+    <div class="maintext">
+        <div class="character_selector">
+            <a href="The Kingdom - Multivers.html#SIO1">
+                1ère année
+            </a>
+            <a href="The Kingdom - Multivers.html#SIO2">
+                2ème année
+            </a>
+            <a href="The Kingdom - Multivers.html#PROFS">
+                Professeurs
+            </a>
+            <div class="research">
+                <input aria-label="Rechercher" type="text" id="research_box">
+                <svg id="lens" viewBox="0 0 24 24">
+                    <path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" class="fill-primary transition-[fill] duration-300">
+                    </path>
+                </svg>
+            </div>
+                
+        </div>
+
+        <h2 class="second_title" id="SIO1">
+            Les 1ère année
+        </h2>
+
+        <div class="characters_container" id="1annee">
+        </div>
+
+        <h2 class="second_title" id="SIO2">
+            Les 2ème année
+        </h2>
+
+        <div class="characters_container" id="2annee">
+        </div>
+
+        <h2 class="second_title" id="PROFS">
+            Les Professeurs
+        </h2>
+
+        <div class="characters_container" id="prof">
+        </div>
+    </div>
+    
+    <script>
+        let array_characters_1 = ["bastien","wise cyril","djibril","leo","mathys","maxline","miruna","fuhrernus","raphael","Fius 4"];
+        let array_characters_2 = ["kylian","lucas","umut"];
+        let array_characters_3 = ["boyer","gagneur","hamadouche","darth kordzinski","vitorino","thouverez","visocchi"]
+        $("#research_box").on("keyup", () => {
+
+            $("#1annee").empty();
+            let filtered_array_1 = array_characters_1.filter((element) => {
+                return element.toLowerCase().includes($("#research_box").val().toLowerCase());
+            })
+            if(filtered_array_1.length <= 0){
+                $("#SIO1").hide();
+                $("#1annee").hide();
+            }else{
+                $("#SIO1").show();
+                $("#1annee").show();
+            }
+            for(let i = 0; i < filtered_array_1.length; i++){
+                $("#1annee").append(getCharacterCard(filtered_array_1[i]));
+            }
+
+            $("#2annee").empty();
+            let filtered_array_2 = array_characters_2.filter((element) => {
+                return element.toLowerCase().includes($("#research_box").val().toLowerCase());
+            })
+            if(filtered_array_2.length <= 0){
+                $("#SIO2").hide();
+                $("#2annee").hide();
+            }else{
+                $("#SIO2").show();
+                $("#2annee").show();
+            }
+            for(let i = 0; i < filtered_array_2.length; i++){
+                $("#2annee").append(getCharacterCard(filtered_array_2[i]));
+            }
+
+            $("#prof").empty();
+            let filtered_array_3 = array_characters_3.filter((element) => {
+                return element.toLowerCase().includes($("#research_box").val().toLowerCase());
+            })
+            if(filtered_array_3.length <= 0){
+                $("#PROFS").hide();
+                $("#prof").hide();
+            }else{
+                $("#PROFS").show();
+                $("#prof").show();
+            }
+            for(let i = 0; i < filtered_array_3.length; i++){
+                $("#prof").append(getProfessorCard(filtered_array_3[i]));
+            }
+        })
+
+        function capitalizeFirstLetter(string) {
+            return string.charAt(0).toUpperCase() + string.slice(1);
+        }
+        function getCharacterCard(character_name){
+            return `<a class='character' href='CharMultivers/${capitalizeFirstLetter(character_name)}.html'><img src='./Photos/multivers/${character_name}.jpg' alt='${capitalizeFirstLetter(character_name)}'/><h2>${capitalizeFirstLetter(character_name)}</h2></a>`;
+        }
+        function getProfessorCard(character_name){
+            return `<a class='character' href='CharMultivers/Profs/${capitalizeFirstLetter(character_name)}.html'><img src='./Photos/multivers/profs/${character_name}.jpg' alt='${capitalizeFirstLetter(character_name)}'/><h2>${capitalizeFirstLetter(character_name)}</h2></a>`;
+        }
+        for(let i = 0; i < array_characters_1.length; i++){
+            $("#1annee").append(getCharacterCard(array_characters_1[i]));
+        }
+        for(let i = 0; i < array_characters_2.length; i++){
+            $("#2annee").append(getCharacterCard(array_characters_2[i]));
+        }
+        for(let i = 0; i < array_characters_3.length; i++){
+            $("#prof").append(getProfessorCard(array_characters_3[i]));
+        }
+
+        $("#lens").on("click",() =>{
+            $("#research_box").focus();
+        })
+    </script> 
+</body>
